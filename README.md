@@ -218,8 +218,6 @@ Finding #2:
 
 ### Example 2: Pull Request Blocked
 
-![PR Blocked Screenshot](screenshots/pr-blocked.png)
-
 ```
 ❌ Security Scan / Scan for Secrets
 
