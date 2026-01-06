@@ -473,14 +473,6 @@ lsof -i :8080
 # Check Docker logs
 docker-compose logs -f
 ```
-
-### Get Help
-
-- 📖 [Documentation](docs/)
-- 💬 [Discussions](https://github.com/yourusername/gitleaks-control-panel/discussions)
-- 🐛 [Report Issues](https://github.com/yourusername/gitleaks-control-panel/issues)
-- 📧 Email: your-email@example.com
-
 ---
 
 ## 📜 License
@@ -506,7 +498,7 @@ Special thanks to the security community for making the web safer! 🔒
 
 ## 📞 Contact
 
-**LinkedIn:** [Your Profile](https://www.linkedin.com/in/momen-rezk/)  
+**LinkedIn:** [MOAMEN REZK](https://www.linkedin.com/in/momen-rezk/)  
 
 ---
 
