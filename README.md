@@ -81,7 +81,7 @@ Detects 100+ secret patterns including:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Momenrezk90/gitleaks-control-panel.git
+git clone https://github.com/Momenrezk90/GitLeaks-workflow-Control-Panel-.git
 cd gitleaks-control-panel
 
 # Start the application
