@@ -9,7 +9,12 @@
 
 > Stop secret leaks before they happen. Deploy security to 100+ repositories in minutes, not days.
 
-![Control Panel Screenshot](screenshots/hero.png)
+![Control Panel Screenshot](screenshots/1.jpg)
+![Configration Page](screenshots/2.jpg)
+![How To Use Configration Page](screenshots/3.jpg)
+![Select The Repo](screenshots/4.jpg)
+![See the Work Flow](screenshots/5.jpg)
+![Result After Trying To Test Or Commit Sensitive Data To The Repository.](screenshots/6.jpg)
 
 ---
 
