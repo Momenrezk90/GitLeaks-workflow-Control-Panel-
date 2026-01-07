@@ -105,7 +105,7 @@ open http://localhost:8080
 
 ### Add License to GitHub
 
-#### For Single Repository:
+#### For Single Repository: (Optional)
 
 1. Go to your repository on GitHub
 2. Click **Settings** (top menu)
@@ -116,7 +116,7 @@ open http://localhost:8080
    - **Secret:** Your license key (paste it here)
 6. Click **"Add secret"**
 
-#### For Organization (All Repos):
+#### For Organization (All Repos): (Required)
 
 1. Go to: `https://github.com/organizations/YOUR-ORG-NAME/settings/secrets/actions`
 2. Click **"New organization secret"**
