@@ -704,13 +704,18 @@ git push</pre>
                     <div id="org-repo-list"></div>
 
                     <div style="margin-top: 30px;">
-                        <div class="input-group">
-                            <label>
-                                <input type="checkbox" id="dry-run" checked> Dry Run (preview only)
-                            </label>
-                        </div>
-                        <button class="btn btn-success" onclick="deployToOrg()">Deploy to Selected</button>
-                    </div>
+    <div class="input-group">
+        <label>
+            <input type="checkbox" id="select-all-repos" onchange="toggleAllRepos()"> Select All Repositories
+        </label>
+    </div>
+    <div class="input-group">
+        <label>
+            <input type="checkbox" id="dry-run" checked> Dry Run (preview only)
+        </label>
+    </div>
+    <button class="btn btn-success" onclick="deployToOrg()">Deploy to Selected</button>
+</div>
                 </div>
 
                 <div id="org-logs" style="display: none; margin-top: 30px;">
@@ -1053,7 +1058,7 @@ commits = []`
                         card.className = 'project-card';
                         card.innerHTML = `
                             <h3>
-                                <input type="checkbox" checked data-repo="${repo.full_name}"> 
+                                <input type="checkbox" data-repo="${repo.full_name}" class="repo-checkbox"> 
                                 ${repo.name}
                             </h3>
                             <p>
@@ -1208,6 +1213,16 @@ commits = []`
         function exportReport() {
             alert('Report exported successfully!');
         }
+
+        // Toggle all repositories selection
+function toggleAllRepos() {
+    const selectAllCheckbox = document.getElementById('select-all-repos');
+    const repoCheckboxes = document.querySelectorAll('.repo-checkbox');
+    
+    repoCheckboxes.forEach(checkbox => {
+        checkbox.checked = selectAllCheckbox.checked;
+    });
+}
 
         // Reset dashboard
         function resetDashboard() {
