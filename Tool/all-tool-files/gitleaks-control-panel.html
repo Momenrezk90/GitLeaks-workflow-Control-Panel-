@@ -322,12 +322,6 @@
             border-left: 4px solid #ffc107;
         }
 
-        .alert-danger {
-            background: #f8d7da;
-            color: #721c24;
-            border-left: 4px solid #dc3545;
-        }
-
         .logs {
             background: #1e1e1e;
             color: #d4d4d4;
@@ -706,10 +700,7 @@ git push</pre>
                 </div>
 
                 <div id="org-repos" style="display: none; margin-top: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                        <h3 style="margin: 0;">Repositories in Organization:</h3>
-                        <button class="btn btn-secondary" onclick="toggleAllRepos()" id="select-all-btn">Select All</button>
-                    </div>
+                    <h3 style="margin-bottom: 15px;">Repositories in Organization:</h3>
                     <div id="org-repo-list"></div>
 
                     <div style="margin-top: 30px;">
@@ -937,9 +928,9 @@ description = "Allowlist for known false positives only"
 
 # Only ignore example/template files
 paths = [
-  '''\.env\.example'',
-  '''\.env\.template'',
-  '''\.env\.sample'',
+  '''\.env\.example$''',
+  '''\.env\.template$''',
+  '''\.env\.sample$''',
 ]
 
 # Ignore common false positive patterns
@@ -1062,7 +1053,7 @@ commits = []`
                         card.className = 'project-card';
                         card.innerHTML = `
                             <h3>
-                                <input type="checkbox" class="repo-checkbox" data-repo="${repo.full_name}"> 
+                                <input type="checkbox" checked data-repo="${repo.full_name}"> 
                                 ${repo.name}
                             </h3>
                             <p>
@@ -1096,25 +1087,6 @@ commits = []`
                     </div>
                 `;
             });
-        }
-
-        // Toggle all repos selection
-        function toggleAllRepos() {
-            const checkboxes = document.querySelectorAll('.repo-checkbox');
-            const selectAllBtn = document.getElementById('select-all-btn');
-            
-            // Check if all are currently selected
-            const allSelected = Array.from(checkboxes).every(cb => cb.checked);
-            
-            if (allSelected) {
-                // Unselect all
-                checkboxes.forEach(cb => cb.checked = false);
-                selectAllBtn.textContent = 'Select All';
-            } else {
-                // Select all
-                checkboxes.forEach(cb => cb.checked = true);
-                selectAllBtn.textContent = 'Deselect All';
-            }
         }
 
         // Deploy to org
