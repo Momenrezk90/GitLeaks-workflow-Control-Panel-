@@ -95,6 +95,54 @@ open http://localhost:8080
 
 ---
 
+## 🔑 GitLeaks License Setup (Required)
+
+### Get Your Free License Key
+
+1. Visit: https://gitleaks.io
+2. Sign up for a **free account**
+3. You'll receive a license key like: `tttttt-tttttt-tttttt-tttttt-tttttt-tt`
+
+### Add License to GitHub
+
+#### For Single Repository:
+
+1. Go to your repository on GitHub
+2. Click **Settings** (top menu)
+3. Navigate to **Secrets and variables** → **Actions**
+4. Click **"New repository secret"**
+5. Fill in:
+   - **Name:** `GITLEAKS_LICENSE`
+   - **Secret:** Your license key (paste it here)
+6. Click **"Add secret"**
+
+#### For Organization (All Repos):
+
+1. Go to: `https://github.com/organizations/YOUR-ORG-NAME/settings/secrets/actions`
+2. Click **"New organization secret"**
+3. Fill in:
+   - **Name:** `GITLEAKS_LICENSE`
+   - **Secret:** Your license key
+   - **Repository access:** Select "All repositories"
+4. Click **"Add secret"**
+
+### Update Workflow File
+
+The workflow file is already configured with the license:
+```yaml
+- name: Run GitLeaks
+  uses: gitleaks/gitleaks-action@v2
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+    GITLEAKS_ENABLE_SUMMARY: true
+```
+
+⚠️ **Important:** Without adding the `GITLEAKS_LICENSE` secret, the GitHub Actions will fail with an error message.
+
+---
+
+
 ## 📖 Usage
 
 ### Option 1: Single Project Deployment
